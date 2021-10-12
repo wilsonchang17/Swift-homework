@@ -1,0 +1,80 @@
+410821312 張宸瑋
+
+Q1:
+func getE(num: Int){
+    var ans: Float = 1
+    if num == 0{
+        print(0)
+    }
+    if num == 1{
+        print(1)
+    }
+    else{
+        for i in 1...num-1{
+            var t: Int = 1
+            for j in 1...i{
+                t = t*j
+            }
+            ans += 1/Float(t)
+        }
+        print(ans)
+    }
+}
+
+getE(num: 1)
+getE(num: 2)
+getE(num: 3)
+getE(num: 4)
+
+_________________________________________________________
+
+
+Q2:
+func gradeLevel(num: [Int]){
+    var a: Int = 0
+    var b: Int = 0
+    var c: Int = 0
+    for score in num{
+        if (score >= 80 && score <= 100){
+            a += 1
+        }
+        else if (score >= 60 && score <= 79){
+            b += 1
+        }
+        else{
+            c += 1
+        }
+    }
+    print("A:", a)
+    print("B:", b)
+    print("C:", c)
+}
+
+var grade: [Int] = [80, 90, 75, 50]
+gradeLevel(num: grade)
+
+_________________________________________________________
+
+
+Q3:
+class Rectangle{
+    var width: Int
+    var length: Int
+
+    init(length: Int, width: Int) {
+        self.width = width
+        self.length = length
+    }
+    func perimeter() -> Int{
+        return 2*(width+length)
+    }
+    func area() -> Int{
+        return width*length
+    }
+    
+}
+
+var rectangleA = Rectangle(length: 10, width: 20)
+
+print(rectangleA.perimeter())
+print(rectangleA.area())
